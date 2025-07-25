@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere | Real-time Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="cloud-icon">
+                <i class="fas fa-cloud"></i>
+                <i class="fas fa-cloud" style="--i:1"></i>
+                <i class="fas fa-cloud" style="--i:2"></i>
+            </div>
+            <div class="loading-text">Loading WeatherSphere...</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1><i class="fas fa-cloud-sun"></i> WeatherSphere</h1>
+                    <p class="subtitle">Real-time weather insights for your location</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="container">
+                <form id="weather-form" class="weather-form" autocomplete="off">
+                    <div class="search-container">
+                        <input type="text" id="city-input" placeholder="Search for a city..." required>
+                        <div id="suggestions" class="suggestions-container"></div>
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search" id="search-icon"></i>
+                            <div class="spinner hidden" id="spinner"></div>
+                        </button>
+                    </div>
+                </form>
+
+                <section id="weather-result" class="weather-card hidden">
+                    <div class="weather-main">
+                        <div class="location-info">
+                            <h2 class="city-name">New York</h2>
+                            <p class="date-time">Monday, June 10, 2023 • 3:45 PM</p>
+                        </div>
+                        <div class="current-weather">
+                            <div class="temperature-container">
+                                <span class="temperature">24</span>
+                                <span class="unit">°C</span>
+                            </div>
+                            <div class="weather-icon">
+                                <i class="fas fa-sun"></i>
+                                <span class="description">Sunny</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-temperature-high"></i>
+                            <div>
+                                <span class="detail-label">Feels Like</span>
+                                <span class="detail-value feels-like">26°C</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <span class="detail-label">Humidity</span>
+                                <span class="detail-value humidity">65%</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <span class="detail-label">Wind</span>
+                                <span class="detail-value wind-speed">12 km/h</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <div>
+                                <span class="detail-label">Pressure</span>
+                                <span class="detail-value pressure">1012 hPa</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="forecast-container hidden">
+                    <h3 class="forecast-title">5-Day Forecast</h3>
+                    <div class="forecast-cards">
+                        <!-- Forecast cards will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="container">
+                <p id="copyright">&copy; WeatherSphere. Powered by OpenWeatherMap API.</p>
+                <p class="design-credit">
+                    <a href="https://github.com/MMfrontend-developer" target="_blank" rel="noopener noreferrer">Designed by MM</a>
+                </p>
+                <div class="theme-toggle">
+                    <span>Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
