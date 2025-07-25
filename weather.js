@@ -51,6 +51,7 @@ async function fetchWeather(city) {
   }
 }
 
+// Updated weather UI with improved date formatting
 function updateWeatherUI(data) {
   document.querySelector(".city-name").textContent = `${data.name}, ${data.sys.country}`;
   
