@@ -242,3 +242,5 @@ if (navigator.geolocation) {
 
 // Copyright footer
 document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} WeatherSphere`;
+
+
